@@ -7,7 +7,7 @@ const defaultPortfolioData = {
         email: "Denisobadoharold00@gmail.com",
         phone: "0769345790",
         education: "BSc Information Technology",
-        heroImg: "" // base64 or empty
+        heroImg: ""
     },
     projects: [
         {
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // --- Portfolio Initialization ---
 function initializePortfolio() {
-    // Smooth scrolling for navigation links (user only)
+    // Smooth scrolling for navigation links
     if (!window.isAdmin && navLinks) {
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
@@ -133,7 +133,7 @@ function initializePortfolio() {
 
 // --- Event Listeners ---
 function setupEventListeners() {
-    // Navbar scroll effect (user only)
+    // Navbar scroll effect
     if (!window.isAdmin) {
         window.addEventListener('scroll', function() {
             if (window.scrollY > 100) {
@@ -144,19 +144,19 @@ function setupEventListeners() {
             updateActiveNavLink();
         });
     }
-    // Mobile menu toggle (user only)
+    // Mobile menu toggle
     if (!window.isAdmin && hamburger) {
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
     }
-    // Download CV (user only)
+    // Download CV
     if (!window.isAdmin && downloadCvBtn) {
         downloadCvBtn.setAttribute('href', 'DENIS_HAROLD_OBADO_CV.pdf');
         downloadCvBtn.setAttribute('download', 'DENIS_HAROLD_OBADO_CV.pdf');
     }
-    // Contact form (user only)
+    // Contact form
     if (!window.isAdmin && document.getElementById('contact-form')) {
         document.getElementById('contact-form').addEventListener('submit', handleContactForm);
     }
