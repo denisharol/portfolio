@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Denis Harold Obado Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">Denis<span class="highlight">Obado</span> <span style="font-size:1rem;color:var(--accent-color);">Admin</span></span>
+            </div>
+        </div>
+    </nav>
+    <div style="height:70px"></div>
+    <div class="container">
+        <div class="modal-content" style="margin:2rem auto;">
+            <div class="modal-header">
+                <h2>Admin Panel</h2>
+            </div>
+            <div class="modal-body">
+                <div class="admin-tabs">
+                    <button class="tab-btn active" data-tab="personal">Personal Info</button>
+                    <button class="tab-btn" data-tab="projects">Projects</button>
+                    <button class="tab-btn" data-tab="skills">Skills</button>
+                    <button class="tab-btn" data-tab="experience">Experience</button>
+                    <button class="tab-btn" data-tab="social">Social Links</button>
+                </div>
+                <!-- Personal Info Tab -->
+                <div id="personal-tab" class="tab-content active">
+                    <h3>Personal Information</h3>
+                    <form id="personal-form">
+                        <div class="form-group">
+                            <label>Hero Subtitle:</label>
+                            <textarea id="admin-hero-subtitle" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>About Description:</label>
+                            <textarea id="admin-about-desc" rows="5"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Location:</label>
+                            <input type="text" id="admin-location">
+                        </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" id="admin-email">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone:</label>
+                            <input type="text" id="admin-phone">
+                        </div>
+                        <div class="form-group">
+                            <label>Education:</label>
+                            <input type="text" id="admin-education">
+                        </div>
+                        <div class="form-group">
+                            <label>Hero Image:</label>
+                            <input type="file" id="admin-hero-img" accept="image/*">
+                            <div style="margin-top:1rem;">
+                                <img id="admin-hero-img-preview" src="deno" alt="Preview" style="width:120px;height:120px;border-radius:50%;object-fit:cover;">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Personal Info</button>
+                    </form>
+                </div>
+                <!-- Projects Tab -->
+                <div id="projects-tab" class="tab-content">
+                    <h3>Manage Projects</h3>
+                    <button class="btn btn-primary" id="add-project-btn">Add New Project</button>
+                    <div id="admin-projects-list"></div>
+                </div>
+                <!-- Skills Tab -->
+                <div id="skills-tab" class="tab-content">
+                    <h3>Manage Skills</h3>
+                    <div id="admin-skills-list"></div>
+                </div>
+                <!-- Experience Tab -->
+                <div id="experience-tab" class="tab-content">
+                    <h3>Manage Experience</h3>
+                    <button class="btn btn-primary" id="add-experience-btn">Add New Experience</button>
+                    <div id="admin-experience-list"></div>
+                </div>
+                <!-- Social Links Tab -->
+                <div id="social-tab" class="tab-content">
+                    <h3>Social Media Links</h3>
+                    <form id="social-form">
+                        <div class="form-group">
+                            <label>GitHub URL:</label>
+                            <input type="url" id="admin-github">
+                        </div>
+                        <div class="form-group">
+                            <label>LinkedIn URL:</label>
+                            <input type="url" id="admin-linkedin">
+                        </div>
+                        <div class="form-group">
+                            <label>Twitter URL:</label>
+                            <input type="url" id="admin-twitter">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update Social Links</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // Force admin mode
+        window.isAdmin = true;
+    </script>
+</body>
+</html>
