@@ -156,10 +156,6 @@ function setupEventListeners() {
         downloadCvBtn.setAttribute('href', 'DENIS_HAROLD_OBADO_CV.pdf');
         downloadCvBtn.setAttribute('download', 'DENIS_HAROLD_OBADO_CV.pdf');
     }
-    // Contact form
-    if (!window.isAdmin && document.getElementById('contact-form')) {
-        document.getElementById('contact-form').addEventListener('submit', handleContactForm);
-    }
 }
 
 // --- Scroll to Section ---
@@ -325,17 +321,27 @@ function loadSocialLinks() {
 }
 
 // --- Contact Form Handler (User Side) ---
-function handleContactForm(e) {
-    e.preventDefault();
-    const name = document.getElementById('contact-name').value;
-    const email = document.getElementById('contact-email-input').value;
-    const message = document.getElementById('contact-message').value;
-    const mailto = `mailto:${portfolioData.personal.email}?subject=Portfolio Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(message + "\n\nFrom: " + name + " (" + email + ")")}`;
-    window.location.href = mailto;
-    e.target.reset();
+function sendEmail() {
+    const templateparams = {
+        name: document.querySelector('#name').value,
+        email: document.querySelector('#email').value,
+        subject: document.querySelector('#subject').value,
+        message: document.querySelector('#message').value,
+    };
+
+    emailjs
+        .send('your_service_id', 'your_template_id', templateparams)
+        .then(() => {
+            alert('Email sent successfully!');
+            document.getElementById('contact-form').reset();
+        })
+        .catch((error) => {
+            console.error('EmailJS error:', error);
+            alert('Failed to send email. Please try again later.');
+        });
 }
 
-// --- ADMIN PANEL LOGIC ---
+
 function setupAdminTabs() {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
