@@ -1015,6 +1015,153 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .hero-container,
+    .about-content,
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-image,
+    .about-info,
+    .contact-form {
+        margin-top: 24px;
+        width: 100%;
+        max-width: 400px;
+    }
+    .about-text,
+    .about-info {
+        width: 100%;
+        max-width: 500px;
+    }
+    .skills-grid,
+    .projects-grid,
+    .timeline {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #fff;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-link {
+        padding: 12px 20px;
+        width: 100%;
+        border-bottom: 1px solid #eee;
+    }
+    .hamburger {
+        display: block;
+        margin-left: auto;
+    }
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 0;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-avatar {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+    }
+    .about-content,
+    .contact-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .about-stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .about-info {
+        margin-top: 20px;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .timeline {
+        padding-left: 0;
+    }
+    .contact-content {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .contact-info,
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+    .footer {
+        text-align: center;
+        font-size: 0.95em;
+        padding: 12px 0;
+    }
+    .btn,
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 1em;
+        padding: 12px 0;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        font-size: 1em;
+    }
+    .social-links {
+        justify-content: center;
+        gap: 16px;
+    }
+}
+
+/* Ensure images and avatars are responsive */
+img, .hero-avatar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 /* Animation Classes */
 .fade-in {
     opacity: 0;
