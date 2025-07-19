@@ -330,7 +330,7 @@ function sendEmail() {
     };
 
     emailjs
-        .send('your_service_id', 'your_template_id', templateparams)
+        .send('service_6raqe15', 'template_du8o4c8', templateparams)
         .then(() => {
             alert('Email sent successfully!');
             document.getElementById('contact-form').reset();
